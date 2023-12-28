@@ -1,0 +1,90 @@
+<html
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security6"
+    xmlns:th="http://thymeleaf.org"
+>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}"
+                ><img alt="home logo" height="32" th:src="@{/images/site/md-logo.png}"
+            /></a>
+            <button
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent"
+                data-bs-toggle="collapse"
+                type="button"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" id="homeLink" th:href="@{/}">Home</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="aboutLink" th:href="@{/about}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contactLink" th:href="@{/contact}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pricingLink" th:href="@{/pricing}">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="faqLink" th:href="@{/faq}">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="newsLink" th:href="@{/news}">News</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" sec:authorize="hasAuthority('ADMIN')">
+                        <a
+                            aria-expanded="false"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            id="adminLink"
+                            role="button"
+                            th:href="@{/admin/users}"
+                        >
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" th:href="@{/admin/users}">User Maintenance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" sec:authorize="!isAuthenticated()">
+                        <a class="nav-link" id="registerLink" th:href="@{/register}">Register</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="!isAuthenticated()">
+                        <a class="nav-link" id="loginLink" th:href="@{/login}">Login</a>
+                    </li>
+
+                    <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                        <a
+                            aria-expanded="false"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            id="accountLink"
+                            role="button"
+                            th:href="@{/users/profile}"
+                        >
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" th:href="@{/users/profile}">View Account Settings</a></li>
+                            <li><a class="dropdown-item" th:href="@{/users/profile/update}">Update Settings</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" th:href="@{/logout}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</html>

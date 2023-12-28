@@ -1,0 +1,69 @@
+<!doctype html>
+<html
+    lang="en"
+    layout:decorate="~{layout}"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:th="http://thymeleaf.org"
+>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <main layout:fragment="body">
+            <div class="main">
+                <h3 class="display-5 fw-bolder text-center mt-5 pt-5">Login</h3>
+                <div class="row">
+                    <div class="login-form d-flex align-items-center justify-content-center flex-column">
+                        <div
+                            class="alert alert-success mb-5"
+                            style="width: fit-content; margin: 0 auto"
+                            th:if="${param.logout}"
+                        >
+                            You have been logged out.
+                        </div>
+                        <div
+                            class="alert alert-danger mb-5"
+                            style="width: fit-content; margin: 0 auto"
+                            th:if="${param.error}"
+                        >
+                            Invalid username and password combination.
+                        </div>
+                        <div
+                            class="alert alert-success mb-5"
+                            style="width: fit-content; margin: 0 auto"
+                            th:if="${registrationRocks} == true"
+                        >
+                            Registration Complete.
+                        </div>
+                        <form class="w-100" method="post" role="form" th:action="@{/login}">
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Username</label>
+                                <input
+                                    class="form-control"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Email address"
+                                    type="text"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input
+                                    class="form-control"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    type="password"
+                                />
+                            </div>
+
+                            <div class="col-12 d-flex align-items-center justify-content-center mt-3">
+                                <button class="btn btn-secondary" type="submit" value="Login">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:th="http://thymeleaf.org"
+>
+    <head th:insert="~{layout/head}"></head>
+    <body>
+        <!-- import site navigation bar -->
+        <nav th:insert="~{layout/navbar}"></nav>
+
+        <main layout:fragment="body" style="min-height: 80vh">
+            <!-- layout:fragment named 'body' will appear here -->
+        </main>
+        <footer th:insert="~{layout/footer}" />
+    </body>
+</html>

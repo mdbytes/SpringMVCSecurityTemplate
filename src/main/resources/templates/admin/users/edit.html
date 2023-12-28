@@ -1,0 +1,92 @@
+<!doctype html>
+<html
+        lang="en"
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}"
+>
+<head>
+    <title>Update Profile</title>
+</head>
+<body>
+<main id="create-form-page" class="flex-shrink-0" layout:fragment="body">
+    <h3 class="display-5 fw-bold text-center mt-5">Update Profile</h3>
+    <div class="container">
+        <form method="post" th:action="@{/admin/users/edit/{username}(username=${user.username})}" th:object="${user}"
+              class="row g-3" id="profile-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" th:field="*{firstName}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
+                       th:errors="*{firstName}"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" th:field="*{lastName}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <label for="username" class="form-label">Username </label>
+                    <input type="text" class="form-control" id="username" name="username" th:field="*{username}"
+                           disabled/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="text" class="form-control" id="email" name="email" th:field="*{email}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12">
+                    <label for="streetAddress" class="form-label">Street Address</label>
+                    <input type="text" class="form-control" id="streetAddress" name="streetAddress"
+                           th:field="*{streetAddress}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('streetAddress')}"
+                       th:errors="*{streetAddress}"></p>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <label for="cityAddress" class="form-label">City</label>
+                    <input type="text" class="form-control" id="cityAddress" name="cityAddress"
+                           th:field="*{cityAddress}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('cityAddress')}"
+                       th:errors="*{cityAddress}"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="stateAddress" class="form-label">State</label>
+                    <input type="text" class="form-control" id="stateAddress" name="stateAddress"
+                           th:field="*{stateAddress}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('stateAddress')}"
+                       th:errors="*{stateAddress}"></p>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <label for="zipCode" class="form-label">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode" name="zipCode" th:field="*{zipCode}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+                           th:field="*{phoneNumber}"/>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('phoneNumber')}"
+                       th:errors="*{phoneNumber}"></p>
+                </div>
+            </div>
+            <input type="hidden" name="id" th:field="*{id}"/>
+            <input type="hidden" name="password" th:field="*{password}"/>
+
+            <div class="col-md-12 d-flex align-items-center justify-content-center mt-4">
+                <button type="submit" class="btn btn-success">Update Profile</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

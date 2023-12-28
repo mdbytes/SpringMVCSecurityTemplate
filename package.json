@@ -1,0 +1,20 @@
+{
+  "name": "02-thymeleaf-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass src/main/resources/static/styles/sass:src/main/resources/static/styles/css --watch",
+    "minify:css": "css-minify -d /static/styles/css -o /src/main/resources/static/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-minify": "^2.0.0",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "prettier-plugin-java": "^2.5.0"
+  }
+}

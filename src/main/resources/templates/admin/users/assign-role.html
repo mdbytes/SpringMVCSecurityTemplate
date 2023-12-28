@@ -1,0 +1,38 @@
+<!doctype html>
+<html
+        lang="en"
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}"
+>
+<head>
+    <title>Assign Role</title>
+</head>
+<body>
+<main id="create-form-page" class="flex-shrink-0" layout:fragment="body">
+    <h2 class="display-3 fw-bold text-center">Assign Role</h2>
+    <div class="container">
+        <form method="post" th:action="@{/admin/users/role/{username}(username=${user.username})}"
+              th:object="${user}"
+              class="row g-3">
+            <div class="col-md-8">
+                <label for="userRole" class="form-label">New user role for user: <span th:text="${user.username}"/>
+                </label>
+                <select class="form-select" aria-label="Default select example" name="userRole" id="userRole">
+                    <option disabled selected>Open this select menu</option>
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="USER">USER</option>
+                </select>
+            </div>
+            <input type="hidden" name="id" th:field="*{id}"/>
+            <input type="hidden" name="username" th:field="*{username}"/>
+            <input type="hidden" name="email" th:field="*{email}"/>
+
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

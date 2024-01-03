@@ -1,4 +1,4 @@
 *.html linguist-language=Java
 *.scss linguist-vendored
 *.css linquist-vendored
-*.map linguist-vendored
+*.css.map linguist-vendored

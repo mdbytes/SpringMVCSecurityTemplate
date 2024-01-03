@@ -1,1 +1,3 @@
 *.html linguist-language=Java
+static/js/* linguist-vendored
+static/styles/* linquist-vendored

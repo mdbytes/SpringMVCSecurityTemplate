@@ -6,161 +6,160 @@
         layout:decorate="~{layout}"
 >
 <head>
-    <title>Club List</title>
+    <title>Faq</title>
 </head>
 
 <body>
 <main class="flex-shrink-0 py-5" layout:fragment="body">
-    <!-- Pricing section-->
-    <section class="bg-light py-5">
+    <!-- Page Content-->
+    <section class="py-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1 class="fw-bolder">Pay as you grow</h1>
-                <p class="lead fw-normal text-muted mb-0">With our no hassle pricing plans</p>
+                <h1 class="fw-bolder">Frequently Asked Questions</h1>
+                <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
             </div>
-            <div class="row gx-5 justify-content-center">
-                <!-- Pricing card free-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Free</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$0</span>
-                                <span class="text-muted">/ mo.</span>
+            <div class="row gx-5">
+                <div class="col-xl-8">
+                    <!-- FAQ Accordion 1-->
+                    <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
+                    <div class="accordion mb-5" id="accordionExample">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button"
+                                                                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                                                 aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button></h3>
+                            <div class="accordion-collapse collapse show" id="collapseOne"
+                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong>
+                                    It is shown by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
                             </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>1 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed"
+                                                                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                                                 aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button>
+                            </h3>
+                            <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong>
+                                    It is hidden by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">Accordion Item #3</button></h3>
+                            <div class="accordion-collapse collapse" id="collapseThree"
+                                 aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong>
+                                    It is hidden by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Accordion 2-->
+                    <h2 class="fw-bolder mb-3">Website Issues</h2>
+                    <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button"
+                                                                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2"
+                                                                                 aria-expanded="true" aria-controls="collapseOne2">Accordion Item #1</button>
+                            </h3>
+                            <div class="accordion-collapse collapse show" id="collapseOne2"
+                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong>
+                                    It is shown by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed"
+                                                                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2"
+                                                                                 aria-expanded="false" aria-controls="collapseTwo2">Accordion Item #2</button>
+                            </h3>
+                            <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong>
+                                    It is hidden by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree2" aria-expanded="false"
+                                    aria-controls="collapseThree2">Accordion Item #3</button></h3>
+                            <div class="accordion-collapse collapse" id="collapseThree2"
+                                 aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong>
+                                    It is hidden by default, until the collapse plugin adds the appropriate classes
+                                    that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of
+                                    this with custom CSS or overriding our default variables. It's also worth noting
+                                    that just about any HTML can go within the
+                                    <code>.accordion-body</code>
+                                    , though the transition does limit overflow.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Pricing card pro-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                Pro
+                <div class="col-xl-4">
+                    <div class="card border-0 bg-light mt-xl-5">
+                        <div class="card-body p-4 py-lg-5">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <div class="h6 fw-bolder">Have more questions?</div>
+                                    <p class="text-muted mb-4">
+                                        Contact us at
+                                        <br />
+                                        <a href="#!">support@domain.com</a>
+                                    </p>
+                                    <div class="h6 fw-bolder">Follow us</div>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$9</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>5 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pricing card enterprise-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$49</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited</strong>
-                                    linked domains
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
                         </div>
                     </div>
                 </div>

@@ -1,91 +1,91 @@
 <!doctype html>
 <html
-    lang="en"
-    layout:decorate="~{layout}"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-    xmlns:th="http://thymeleaf.org"
+        lang="en"
+        layout:decorate="~{layout}"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        xmlns:th="http://thymeleaf.org"
 >
-    <head>
-        <title>Club List</title>
-    </head>
+<head>
+    <title>User List</title>
+</head>
 
-    <body>
-        <main class="flex-shrink-0" layout:fragment="body">
-            <!-- Page Content-->
+<body>
+<main class="flex-shrink-0" layout:fragment="body">
+    <!-- Page Content-->
 
-            <section class="py-5">
-                <div class="container px-5 py-5">
-                    <div class="text-center mb-5 mt-5">
-                        <h3 class="display-5 fw-bolder">System Users</h3>
-                    </div>
-                    <div class="row gx-5">
-                        <div>
-                            <form class="form-inline my-2 my-lg-0 mb-3" method="get" th:action="@{/admin/users/search}">
-                                <input
-                                    aria-label="search"
-                                    class="form-control mr-sm-2 mb-5"
-                                    name="query"
-                                    placeholder="Search system users"
-                                    type="search"
-                                />
-                            </form>
-                        </div>
-                        <table class="table table-bordered table-striped" id="user-table">
-                            <thead class="bg-dark text-white">
-                                <th>Id</th>
-                                <th>Username</th>
-                                <th>Roles</th>
-                                <th class="text-center">View</th>
-                                <th class="text-center">Update</th>
-                                <th class="text-center">Password</th>
-                                <th class="text-center">Role</th>
-                                <th class="text-center">Delete</th>
-                            </thead>
-                            <tr class="col-lg-6" th:each="user : ${users}">
-                                <td th:text="${user.id}" />
-                                <td th:text="${user.username}" />
-                                <td><span th:each="role : ${user.roles}" th:text="${role.name}" /></td>
-                                <td>
-                                    <a
-                                        class="btn btn-success"
-                                        th:href="@{/admin/users/{username}(username=${user.username})}"
-                                        >View Profile</a
-                                    >
-                                </td>
-                                <td>
-                                    <a
-                                        class="btn btn-primary"
-                                        th:href="@{/admin/users/edit/{username}(username=${user.username})}"
-                                        >Update Profile</a
-                                    >
-                                </td>
-                                <td>
-                                    <a
-                                        class="btn btn-secondary"
-                                        th:href="@{/admin/users/password/{username}(username=${user.username})}"
-                                        >Password Reset</a
-                                    >
-                                </td>
-                                <td>
-                                    <a
-                                        class="btn btn-warning"
-                                        th:href="@{/admin/users/role/{username}(username=${user.username})}"
-                                        >Assign Role</a
-                                    >
-                                </td>
-                                <td>
-                                    <a
-                                        class="btn btn-danger"
-                                        th:href="@{/admin/users/delete/{username}(username=${user.username})}"
-                                        >Delete User</a
-                                    >
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+    <section class="py-5">
+        <div class="container px-5 py-5">
+            <div class="text-center mb-5 mt-5">
+                <h3 class="display-5 fw-bolder">System Users</h3>
+            </div>
+            <div class="row gx-5">
+                <div>
+                    <form class="form-inline my-2 my-lg-0 mb-3" method="get" th:action="@{/admin/users/search}">
+                        <input
+                                aria-label="search"
+                                class="form-control mr-sm-2 mb-5"
+                                name="query"
+                                placeholder="Search system users"
+                                type="search"
+                        />
+                    </form>
                 </div>
-            </section>
-        </main>
-    </body>
+                <table class="table table-bordered table-striped" id="user-table">
+                    <thead class="bg-dark text-white">
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Roles</th>
+                    <th class="text-center">View</th>
+                    <th class="text-center">Update</th>
+                    <th class="text-center">Password</th>
+                    <th class="text-center">Role</th>
+                    <th class="text-center">Delete</th>
+                    </thead>
+                    <tr class="col-lg-6" th:each="user : ${users}">
+                        <td th:text="${user.id}"/>
+                        <td th:text="${user.username}"/>
+                        <td><span th:each="role : ${user.roles}" th:text="${role.name}"/></td>
+                        <td>
+                            <a
+                                    class="btn btn-success"
+                                    th:href="@{/admin/users/{username}(username=${user.username})}"
+                            >View Profile</a
+                            >
+                        </td>
+                        <td>
+                            <a
+                                    class="btn btn-primary"
+                                    th:href="@{/admin/users/edit/{username}(username=${user.username})}"
+                            >Update Profile</a
+                            >
+                        </td>
+                        <td>
+                            <a
+                                    class="btn btn-secondary"
+                                    th:href="@{/admin/users/password/{username}(username=${user.username})}"
+                            >Password Reset</a
+                            >
+                        </td>
+                        <td>
+                            <a
+                                    class="btn btn-warning"
+                                    th:href="@{/admin/users/role/{username}(username=${user.username})}"
+                            >Assign Role</a
+                            >
+                        </td>
+                        <td>
+                            <a
+                                    class="btn btn-danger"
+                                    th:href="@{/admin/users/delete/{username}(username=${user.username})}"
+                            >Delete User</a
+                            >
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
 </html>

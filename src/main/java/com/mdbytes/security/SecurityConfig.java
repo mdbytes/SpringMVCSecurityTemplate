@@ -18,8 +18,8 @@ public class SecurityConfig {
 
     @Autowired
     public SecurityConfig(
-        CustomUserDetailsService userDetailsService,
-        CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler
+            CustomUserDetailsService userDetailsService,
+            CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler
     ) {
         this.userDetailsService = userDetailsService;
         this.customAuthenticationSuccessHandler = customAuthenticationSuccessHandler;
@@ -33,38 +33,38 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(configurer ->
-                configurer
-                    .requestMatchers("/admin/users/**")
-                    .hasAuthority("ADMIN")
-                    .requestMatchers("/users/**")
-                    .authenticated()
-                    .requestMatchers(
-                        "/styles/**",
-                        "/js/**",
-                        "/images/**",
-                        "/",
-                        "/about",
-                        "/contact",
-                        "/pricing",
-                        "/faq",
-                        "/news/**",
-                        "/register",
-                        "/login/**"
-                    )
-                    .permitAll()
-            )
-            .formLogin(form ->
-                form
-                    .loginPage("/login-user")
-                    .loginProcessingUrl("/login")
-                    .successHandler(customAuthenticationSuccessHandler)
-                    .failureUrl("/login-user?error=true")
-                    .permitAll()
-            )
-            .logout(logout -> logout.logoutUrl("/logout").permitAll())
-            .exceptionHandling(configurer -> configurer.accessDeniedPage("/access-denied"));
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(configurer ->
+                        configurer
+                                .requestMatchers("/admin/users/**")
+                                .hasAuthority("ADMIN")
+                                .requestMatchers("/users/**")
+                                .authenticated()
+                                .requestMatchers(
+                                        "/",
+                                        "/styles/**",
+                                        "/js/**",
+                                        "/images/**",
+                                        "/about",
+                                        "/contact",
+                                        "/pricing",
+                                        "/faq",
+                                        "/news/**",
+                                        "/register",
+                                        "/login/**"
+                                )
+                                .permitAll()
+                )
+                .formLogin(form ->
+                        form
+                                .loginPage("/login-user")
+                                .loginProcessingUrl("/login")
+                                .successHandler(customAuthenticationSuccessHandler)
+                                .failureUrl("/login-user?error=true")
+                                .permitAll()
+                )
+                .logout(logout -> logout.logoutUrl("/logout").permitAll())
+                .exceptionHandling(configurer -> configurer.accessDeniedPage("/access-denied"));
 
         return http.build();
     }
